@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.configuration;
+package com.github.senocak.apigw.configuration;
 
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;

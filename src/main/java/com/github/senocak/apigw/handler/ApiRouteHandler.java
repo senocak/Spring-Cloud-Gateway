@@ -1,8 +1,8 @@
-package com.techmonks.apigateway.handler;
+package com.github.senocak.apigw.handler;
 
-import com.techmonks.apigateway.configuration.GatewayRoutesRefresher;
-import com.techmonks.apigateway.entity.ApiRoute;
-import com.techmonks.apigateway.service.RouteService;
+import com.github.senocak.apigw.configuration.GatewayRoutesRefresher;
+import com.github.senocak.apigw.entity.ApiRoute;
+import com.github.senocak.apigw.service.RouteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;

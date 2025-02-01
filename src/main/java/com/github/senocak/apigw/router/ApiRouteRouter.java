@@ -1,6 +1,6 @@
-package com.techmonks.apigateway.router;
+package com.github.senocak.apigw.router;
 
-import com.techmonks.apigateway.handler.ApiRouteHandler;
+import com.github.senocak.apigw.handler.ApiRouteHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

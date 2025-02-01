@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.entity;
+package com.github.senocak.apigw.entity;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.configuration;
+package com.github.senocak.apigw.configuration;
 
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.context.ApplicationEventPublisher;

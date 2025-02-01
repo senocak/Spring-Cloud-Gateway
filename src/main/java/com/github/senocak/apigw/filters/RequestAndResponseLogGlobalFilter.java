@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.filters;
+package com.github.senocak.apigw.filters;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

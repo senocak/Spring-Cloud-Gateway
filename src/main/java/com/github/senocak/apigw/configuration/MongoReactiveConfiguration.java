@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.configuration;
+package com.github.senocak.apigw.configuration;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
 @Configuration
-@EnableReactiveMongoRepositories(basePackages = "com.techmonks.apigateway.repository.**")
+@EnableReactiveMongoRepositories(basePackages = "com.github.senocak.apigw.repository.**")
 public class MongoReactiveConfiguration extends AbstractReactiveMongoConfiguration {
 
 

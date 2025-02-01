@@ -1,6 +1,6 @@
-package com.techmonks.apigateway.repository;
+package com.github.senocak.apigw.repository;
 
-import com.techmonks.apigateway.entity.ApiRoute;
+import com.github.senocak.apigw.entity.ApiRoute;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 

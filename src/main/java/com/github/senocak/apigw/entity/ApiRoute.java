@@ -1,4 +1,4 @@
-package com.techmonks.apigateway.entity;
+package com.github.senocak.apigw.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

@@ -1,8 +1,7 @@
-package com.techmonks.apigateway.service.impl;
+package com.github.senocak.apigw.service;
 
-import com.techmonks.apigateway.entity.ApiRoute;
-import com.techmonks.apigateway.entity.CircuitBreaker;
-import com.techmonks.apigateway.service.RouteService;
+import com.github.senocak.apigw.entity.ApiRoute;
+import com.github.senocak.apigw.entity.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 import org.springframework.cloud.gateway.filter.factory.RetryGatewayFilterFactory;
 import org.springframework.cloud.gateway.filter.factory.SpringCloudCircuitBreakerFilterFactory;
