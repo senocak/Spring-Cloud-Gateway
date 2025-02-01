@@ -3,7 +3,6 @@ package com.techmonks.apigateway.handler;
 import com.techmonks.apigateway.configuration.GatewayRoutesRefresher;
 import com.techmonks.apigateway.entity.ApiRoute;
 import com.techmonks.apigateway.service.RouteService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -14,12 +13,15 @@ import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
 
-@RequiredArgsConstructor
 @Component
 public class ApiRouteHandler {
     private final RouteService routeService;
-
     private final GatewayRoutesRefresher gatewayRoutesRefresher;
+
+    public ApiRouteHandler(final RouteService routeService, final GatewayRoutesRefresher gatewayRoutesRefresher) {
+        this.routeService = routeService;
+        this.gatewayRoutesRefresher = gatewayRoutesRefresher;
+    }
 
     public Mono<ServerResponse> create(ServerRequest serverRequest) {
         Mono<ApiRoute> apiRoute = serverRequest.bodyToMono(ApiRoute.class);

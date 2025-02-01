@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractReactiveMongoConfiguration;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
-//import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 @EnableReactiveMongoRepositories(basePackages = "com.techmonks.apigateway.repository.**")
