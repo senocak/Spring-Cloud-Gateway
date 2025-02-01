@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      uri: mongodb://anil:senocak@localhost:27017
+      database: kaviyer
+    redis:
+      DATABASE: ${REDIS_DATABASE:0}
+      host: ${REDIS_HOST:localhost}
+      PORT: ${REDIS_PORT:6378}
+      PASSWORD: ${REDIS_PASSWORD:senocak}
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
