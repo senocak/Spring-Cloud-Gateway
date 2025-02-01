@@ -77,3 +77,81 @@ For further reference, please consider the following sections:
 Spring Boot Gradle Plugin Reference Guide
 Create an OCI image
 Reactive Gateway
+
+### Example rest api
+```java
+@SpringBootApplication
+@RestController
+public class OrderApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(OrderApplication.class, args);
+    }
+
+    @RequestMapping("orders")
+    public Object getOrders(HttpServletRequest request) throws InterruptedException {
+        System.out.println("Ping from order service");
+        if (new Random().nextBoolean())
+            return ResponseEntity.badRequest().body("Order service is down");
+        Map<String, Object> map = new HashMap<>();
+        request.getHeaderNames()
+                .asIterator()
+                .forEachRemaining(header -> map.put(header, request.getHeader(header)));
+        map.put("method", request.getMethod());
+        map.put("URI", request.getRequestURI());
+        map.put("message", "Order service is up and running");
+        return map;
+    }
+}
+```
+
+### Test 
+
+```bash
+curl --location 'http://localhost:8080/routes' \
+--header 'Content-Type: application/json' \
+--data '{
+    "routeIdentifier": "routeId",
+    "uri": "http://localhost:8081",
+    "method": "GET",
+    "path": "/custom/orders/**",
+    "headers": [
+        "anil:senocak"
+    ],
+    "host": "**.turkcell.com.tr",
+    "body": "contains:hello",
+    "requestHeaders": [
+        "key:value"
+    ],
+    "responseHeader": [
+        "response1:response2"
+    ],
+    "retry": 4,
+    "rewritePath": "/custom(?<segment>.*):/${segment}",
+    "requestRateLimiter": true,
+    "setStatus": 405,
+    "circuitBreaker": {
+        "name": "myCircuitBreaker",
+        "fallbackUri": "forward:/fallback",
+        "statusCodes":[
+            "404",
+            "INTERNAL_SERVER_ERROR"
+        ],
+        "routeId": "routeId",
+        "resumeWithoutError": true
+    }
+}'
+```
+
+```bash
+curl --location --request GET 'http://localhost:8080/routes/refresh-routes'
+```
+
+```bash
+curl --location --request GET 'http://localhost:8080/custom/orders' \
+--header 'anil: senocak' \
+--header 'Host: turkcell.com.tr' \
+--header 'Content-Type: application/json' \
+--data '{
+    "hello": "anil"
+}'
+```
